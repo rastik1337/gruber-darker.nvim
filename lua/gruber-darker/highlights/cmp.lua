@@ -36,7 +36,7 @@ M.highlights.cmp_item_kind_value = Highlight.new("CmpItemKindValue", { link = vi
 M.highlights.cmp_item_kind_enum = Highlight.new("CmpItemKindEnum", { link = vim_hl.type })
 M.highlights.cmp_item_kind_keywork = Highlight.new("CmpItemKindKeyword", { link = vim_hl.keyword })
 M.highlights.cmp_item_kind_snippet = Highlight.new("CmpItemKindSnippet", { link = gruber_hl.dark_niagara })
-M.highlights.cmp_item_kind_color = Highlight.new("CmpItemKindColor", { fg = c.yellow })
+M.highlights.cmp_item_kind_color = Highlight.new("CmpItemKindColor", { fg = c.not_yellow })
 M.highlights.cmp_item_kind_file = Highlight.new("CmpItemKindFile", { fg = c.wisteria })
 M.highlights.cmp_item_kind_reference = Highlight.new("CmpItemKindReference", { fg = c.wisteria })
 M.highlights.cmp_item_kind_folder = Highlight.new("CmpItemKindFolder", { fg = c.wisteria })

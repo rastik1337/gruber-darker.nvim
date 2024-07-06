@@ -16,8 +16,8 @@ function M.setup()
 	vim.g.terminal_color_2 = c.green:to_string()
 	vim.g.terminal_color_10 = c.green:to_string()
 
-	vim.g.terminal_color_3 = c.yellow:to_string()
-	vim.g.terminal_color_11 = c.yellow:to_string()
+	vim.g.terminal_color_3 = c.not_yellow:to_string()
+	vim.g.terminal_color_11 = c.not_yellow:to_string()
 
 	vim.g.terminal_color_4 = c.niagara:to_string()
 	vim.g.terminal_color_12 = c.niagara:to_string()

@@ -20,7 +20,10 @@ M = {
 	["red+1"] = Color.new(0xff4f58),
 	green = Color.new(0x73d936),
 	-- yellow = Color.new(0xffdd33),
-	yellow = Color.new(0xbfa526),
+	--
+	-- 'Not yellow' iterations i've tried so far:
+	-- not_yellow = Color.new(0xbfa526),
+	not_yellow = Color.new(0x26bf26),
 	brown = Color.new(0xcc8c3c),
 	quartz = Color.new(0x95a99f),
 	["niagara-2"] = Color.new(0x303540),

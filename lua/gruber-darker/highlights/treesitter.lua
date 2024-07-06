@@ -106,7 +106,7 @@ M.highlights.keyword = Highlight.new("@keyword", { link = vim_hl.keyword })
 -- M.highlights.keyword_return = Highlight.new("@keyword.return", {})
 
 ---keywords related to conditionals (e.g. `if` / `else`)
-M.highlights.conditional = Highlight.new("@conditional", { fg = c.yellow })
+M.highlights.conditional = Highlight.new("@conditional", { fg = c.not_yellow })
 ---ternary operator (e.g. `?` / `:`)
 M.highlights.conditional_ternary = Highlight.new("@conditional.ternary", {})
 

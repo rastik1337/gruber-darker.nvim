@@ -22,11 +22,11 @@ M.highlights.color_column = Highlight.new("ColorColumn", { bg = c["bg+2"] })
 ---Placeholder characters substituted for concealed text (see 'conceallevel')
 M.highlights.conceal = Highlight.new("Conceal", { fg = c.fg, bg = c.bg })
 ---Character under the cursor
-M.highlights.cursor = Highlight.new("Cursor", { bg = c.yellow })
+M.highlights.cursor = Highlight.new("Cursor", { bg = c.not_yellow })
 ---The character under the cursor when |language-mapping| is used (see 'guicursor')
-M.highlights.l_cursor = Highlight.new("lCursor", { fg = c.none, bg = c.yellow })
+M.highlights.l_cursor = Highlight.new("lCursor", { fg = c.none, bg = c.not_yellow })
 ---Like Cursor, but used when in IME mode |CursorIM|
-M.highlights.cursor_im = Highlight.new("CursorIM", { fg = c.none, bg = c.yellow })
+M.highlights.cursor_im = Highlight.new("CursorIM", { fg = c.none, bg = c.not_yellow })
 ---Screen-column at the cursor, when 'cursorcolumn' is set.
 M.highlights.cursor_column = Highlight.new("CursorColumn", { bg = c["bg+2"] })
 ---Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
@@ -37,11 +37,11 @@ M.highlights.directory = Highlight.new("Directory", { link = gruber_hl.niagara_b
 ---Diff mode: Added line |diff.txt|
 M.highlights.diff_add = Highlight.new("DiffAdd", { fg = c.green, bg = c.none })
 ---Diff mode: Changed line |diff.txt|
-M.highlights.diff_change = Highlight.new("DiffChange", { fg = c.yellow, bg = c.none })
+M.highlights.diff_change = Highlight.new("DiffChange", { fg = c.not_yellow, bg = c.none })
 ---Diff mode: Deleted line |diff.txt|
 M.highlights.diff_delete = Highlight.new("DiffDelete", { fg = c["red+1"], bg = c.none })
 ---Diff mode: Changed text within a changed line |diff.txt|
-M.highlights.diff_text = Highlight.new("DiffText", { fg = c.yellow, bg = c.none })
+M.highlights.diff_text = Highlight.new("DiffText", { fg = c.not_yellow, bg = c.none })
 
 ---Fugitive highlights; might need separate provider for git related plugins
 M.highlights.diff_added = Highlight.new("diffAdded", { link = M.highlights.diff_add })
@@ -51,7 +51,7 @@ M.highlights.diff_line = Highlight.new("diffLine", { link = M.highlights.diff_ch
 ---Filler lines (~) after the end of the buffer.  By, this is highlighted like |hl-NonText|.
 M.highlights.end_of_buffer = Highlight.new("EndOfBuffer", { fg = c["bg+4"], bg = c.none })
 ---Cursor in a focused terminal
-M.highlights.term_cursor = Highlight.new("TermCursor", { bg = c.yellow })
+M.highlights.term_cursor = Highlight.new("TermCursor", { bg = c.not_yellow })
 ---TermCursorNC= { }, ---cursor in an unfocused terminal
 
 ---Error messages on the command line
@@ -71,7 +71,7 @@ M.highlights.sign_column = Highlight.new("SignColumn", { fg = c["bg+2"], bg = c.
 ---Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 M.highlights.line_number = Highlight.new("LineNr", { fg = c["bg+4"] })
 ---Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-M.highlights.cursor_line_number = Highlight.new("CursorLineNr", { fg = c.yellow })
+M.highlights.cursor_line_number = Highlight.new("CursorLineNr", { fg = c.not_yellow })
 ---The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 M.highlights.match_paren = Highlight.new("MatchParen", { fg = c.fg, bg = c.wisteria })
 ---'showmode' message (e.g., "---INSERT ---")
@@ -113,7 +113,7 @@ M.highlights.quick_fix_line = Highlight.new("QuickFixLine", { bg = c["bg+2"], bo
 -- Search
 
 ---Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-M.highlights.search = Highlight.new("Search", { fg = c.black, bg = c.yellow })
+M.highlights.search = Highlight.new("Search", { fg = c.black, bg = c.not_yellow })
 ---'incsearch' highlighting; also used for the text replaced with ":s///c"
 M.highlights.incremental_search = Highlight.new("IncSearch", { fg = c.black, bg = c["fg+2"] })
 M.highlights.current_search = Highlight.new("CurSearch", { link = M.highlights.incremental_search })
@@ -146,7 +146,7 @@ M.highlights.tab_line = Highlight.new("TabLine", { bg = c.none })
 ---Tab pages line, where there are no labels
 M.highlights.tab_line_fill = Highlight.new("TabLineFill", { fg = c["bg+4"], bg = c["bg+1"] })
 ---Tab pages line, active tab page label
-M.highlights.tab_line_sel = Highlight.new("TabLineSel", { fg = c.yellow, bg = c.none, bold = opts.bold })
+M.highlights.tab_line_sel = Highlight.new("TabLineSel", { fg = c.not_yellow, bg = c.none, bold = opts.bold })
 
 ---Titles for output from ":set all", ":autocmd" etc.
 M.highlights.title = Highlight.new("Title", { link = gruber_hl.quartz })
@@ -159,7 +159,7 @@ M.highlights.warning_msg = Highlight.new("WarningMsg", { link = gruber_hl.red })
 ---"nbsp", "space", "tab" and "trail" in 'listchars'
 M.highlights.whitespace = Highlight.new("Whitespace", { fg = c["bg+4"], bg = c.none })
 ---Current match in 'wildmenu' completion
-M.highlights.wild_menu = Highlight.new("WildMenu", { fg = c.black, bg = c.yellow })
+M.highlights.wild_menu = Highlight.new("WildMenu", { fg = c.black, bg = c.not_yellow })
 ---These groups are not listed as vim groups,
 ---but they are defacto standard group names for syntax highlighting.
 ---commented out groups should chain up to their "preferred" group by
@@ -183,7 +183,7 @@ M.highlights.identifier = Highlight.new("Identifier", { link = gruber_hl.fg1 })
 ---Function name (also: methods for classes)
 M.highlights.func = Highlight.new("Function", { link = gruber_hl.niagara })
 ---(preferred) any statement
-M.highlights.statement = Highlight.new("Statement", { fg = c.yellow })
+M.highlights.statement = Highlight.new("Statement", { fg = c.not_yellow })
 ---If, then, else, endif, switch, etc.
 M.highlights.conditional = Highlight.new("Conditional", { link = gruber_hl.yellow_bold })
 ---For, do, while, etc.
@@ -237,7 +237,7 @@ M.highlights.italic = Highlight.new("Italic", { italic = true })
 ---Error = Highlight.new("Error", { fg = c.error }) ---(preferred) any erroneous construct
 
 ---(preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-M.highlights.todo = Highlight.new("Todo", { fg = c.bg, bg = c.yellow })
+M.highlights.todo = Highlight.new("Todo", { fg = c.bg, bg = c.not_yellow })
 
 -- Markdown
 
